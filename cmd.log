@@ -1,0 +1,37 @@
+./gradlew build
+java -jar microservices/product-service/build/libs/*.jar &
+./gradlew build
+java -jar microservices/product-service/build/libs/*.jar &
+java -jar microservices/product-service/build/libs/*.jar &
+jobs -p
+kill $(jobs -p)
+./gradlew clean build
+java -jar microservices/product-service/build/libs/*.jar &
+kill $(jobs -p)
+jobs -p
+jobs -p
+./gradlew clean build
+./gradlew clean build --scan
+./gradlew clean build
+./gradlew clean build
+jobs -p
+lsof -i :7000
+netstat -nlp | grep :7000
+netstat -nlp
+lsof -n -i :7000 | grep LISTEN
+lsof -n -i :7001 | grep LISTEN
+lsof -n -i :7000 | grep LISTEN
+lsof -n -i :7001 | grep LISTEN
+curl http://localhost:7000/product-composite/1 -s | jq .
+curl http://localhost:7000/product-composite/13 -i
+curl http://localhost:7000/product-composite/113 -s | jq .
+curl http://localhost:7000/product-composite/213 -s | jq .
+curl http://localhost:7000/product-composite/-1 -i
+curl http://localhost:7000/product-composite/invalidProductId -i
+./gradlew build
+chmod +x test-em-all.bash
+java -jar microservices/product-composite-service/build/libs/*.jar &
+java -jar microservices/product-service/build/libs/*.jar &
+java -jar microservices/recommendation-service/build/libs/*.jar &
+java -jar microservices/review-service/build/libs/*.jar &
+java -jar microservices/price-service/build/libs/*.jar &

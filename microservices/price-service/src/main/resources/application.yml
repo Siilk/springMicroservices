@@ -1,4 +1,4 @@
-server.port: 7005
+server.port: 7106
 
 server.error.include-message: always
 
